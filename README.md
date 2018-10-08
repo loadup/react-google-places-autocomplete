@@ -12,20 +12,39 @@ npm install --save @loadup/react-google-places-autocomplete
 
 ## Usage
 
+#### Step 1:
+
+Ensure the Google API Script is loaded in your `index.html`. You must have access to the global `window['google']` object.
+
+```javascript
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+```
+
+#### Step 2: Use the Autocomplete
+
 ```jsx
 import React, { Component } from 'react'
-
-import MyComponent from '@loadup/react-google-places-autocomplete'
-
+import Autocomplete from '@loadup/react-google-places-autocomplete'  
+ 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <Autocomplete
+        fields={['address_components', 'formatted_address', 'place_id']}
+        onPlaceChanged={({ original, parsed }) => {
+          // Do whatever you want
+          // original is the Google Maps PlaceResult Object
+          // parsed is the parsed version of the address components
+        }}
+        types={['address']}
+      />
     )
   }
 }
+ 
+export default Example
 ```
 
 ## License
 
-MIT © [masiamj](https://github.com/masiamj)
+MIT © [Loadup Technologies](https://github.com/loadup)

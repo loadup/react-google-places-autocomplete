@@ -1,13 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Autocomplete from '@loadup/react-google-places-autocomplete' // Our library
 
-import ExampleComponent from '@loadup/react-google-places-autocomplete'
+const App = () => (
+  <Autocomplete
+    onPlaceChanged={console.log}
+    fields={['address_components', 'formatted_address', 'place_id']}
+    style={{
+      fontSize: '1rem',
+      marginLeft: 50,
+      marginTop: 50,
+      padding: 10,
+      width: 300,
+    }}
+    types={['address']}
+    placeholder="Pick a place. Any place."
+  />
+)
 
-export default class App extends Component {
-  render () {
-    return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
-      </div>
-    )
-  }
-}
+export default App
