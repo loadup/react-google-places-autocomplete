@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { parseGooglePlace } from './utils'
 
@@ -12,6 +12,9 @@ class Autocomplete extends Component {
       document.getElementById(INPUT_COMPONENT_ID),
       {
         types,
+        componentRestrictions: {
+          country: 'us',
+        },
       },
     )
 
