@@ -24,10 +24,6 @@ class Autocomplete extends Component {
     })
   }
 
-  componentWillUnmount() {
-    this.autocomplete.removeListener('place_changed')
-  }
-
   render() {
     const { fields, onPlaceChanged, ...rest } = this.props
     return <input type="text" {...rest} />
