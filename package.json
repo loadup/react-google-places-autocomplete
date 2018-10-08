@@ -1,6 +1,6 @@
 {
   "name": "@loadup/react-google-places-autocomplete",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A configurable wrapper around Google Maps Autocomplete Widget with built in session support.",
   "author": "masiamj",
   "license": "MIT",

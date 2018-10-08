@@ -2,14 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { parseGooglePlace } from './utils'
 
-const INPUT_COMPONENT_ID = 'loadup-react-google-places-autocomplete-input'
-
 class Autocomplete extends Component {
   componentDidMount() {
-    const { fields, onPlaceChanged, types } = this.props
+    const { fields, id, onPlaceChanged, types } = this.props
 
     this.autocomplete = new window['google'].maps.places.Autocomplete(
-      document.getElementById(INPUT_COMPONENT_ID),
+      document.getElementById(id),
       {
         types,
         componentRestrictions: {
@@ -32,13 +30,14 @@ class Autocomplete extends Component {
 
   render() {
     const { fields, onPlaceChanged, ...rest } = this.props
-    return <input id={INPUT_COMPONENT_ID} type="text" {...rest} />
+    return <input type="text" {...rest} />
   }
 }
 
 Autocomplete.propTypes = {
   className: PropTypes.string,
   fields: PropTypes.arrayOf(PropTypes.string).isRequired,
+  id: PropTypes.string.isRequired,
   onPlaceChanged: PropTypes.func.isRequired,
   style: PropTypes.object,
   types: PropTypes.arrayOf(PropTypes.string).isRequired,
