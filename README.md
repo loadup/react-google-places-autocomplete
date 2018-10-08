@@ -31,6 +31,7 @@ class Example extends Component {
     return (
       <Autocomplete
         fields={['address_components', 'formatted_address', 'place_id']}
+        id="example-autocomplete-id"
         onPlaceChanged={({ original, parsed }) => {
           // Do whatever you want
           // original is the Google Maps PlaceResult Object
