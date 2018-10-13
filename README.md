@@ -20,13 +20,13 @@ Ensure the Google API Script is loaded in your `index.html`. You must have acces
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 ```
 
-#### Step 2: Use the Autocomplete
+#### Use the Autocomplete
 
 ```jsx
 import React, { Component } from 'react'
-import Autocomplete from '@loadup/react-google-places-autocomplete'  
+import { Autocomplete } from '@loadup/react-google-places-autocomplete'  
  
-class Example extends Component {
+class AutocompleteExample extends Component {
   render () {
     return (
       <Autocomplete
@@ -43,7 +43,31 @@ class Example extends Component {
   }
 }
  
-export default Example
+export default AutocompleteExample
+```
+
+#### Use the SearchBox
+
+```jsx
+import React, { Component } from 'react'
+import { SearchBox } from '@loadup/react-google-places-autocomplete'  
+ 
+class SearchBoxExample extends Component {
+  render () {
+    return (
+      <SearchBox
+        id="example-searchbox-id"
+        onPlaceChanged={({ original, parsed }) => {
+          // Do whatever you want
+          // original is an array of Google Maps PlaceResult Object
+          // parsed is an array of parsed address components
+        }}
+      />
+    )
+  }
+}
+ 
+export default SearchBoxExample
 ```
 
 ## License

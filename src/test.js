@@ -6,40 +6,40 @@ const HAPPY_PATH_DATA = {
     {
       long_name: 'Maple Hill Road',
       short_name: 'Maple Hill Rd',
-      types: ['route'],
+      types: ['route']
     },
     {
       long_name: 'Glencoe',
       short_name: 'Glencoe',
-      types: ['locality', 'political'],
+      types: ['locality', 'political']
     },
     {
       long_name: 'New Trier Township',
       short_name: 'New Trier Township',
-      types: ['administrative_area_level_3', 'political'],
+      types: ['administrative_area_level_3', 'political']
     },
     {
       long_name: 'Cook County',
       short_name: 'Cook County',
-      types: ['administrative_area_level_2', 'political'],
+      types: ['administrative_area_level_2', 'political']
     },
     {
       long_name: 'Illinois',
       short_name: 'IL',
-      types: ['administrative_area_level_1', 'political'],
+      types: ['administrative_area_level_1', 'political']
     },
     {
       long_name: 'United States',
       short_name: 'US',
-      types: ['country', 'political'],
+      types: ['country', 'political']
     },
     { long_name: '60022', short_name: '60022', types: ['postal_code'] },
-    { long_name: '1257', short_name: '1257', types: ['postal_code_suffix'] },
+    { long_name: '1257', short_name: '1257', types: ['postal_code_suffix'] }
   ],
   formatted_address: '235 Maple Hill Rd, Glencoe, IL 60022, USA',
   place_id:
     'EikyMzUgTWFwbGUgSGlsbCBSZCwgR2xlbmNvZSwgSUwgNjAwMjIsIFVTQSIxEi8KFAoSCQvbiN7zww-IEXGP43ighOOQEOsBKhQKEgkF3JgE88MPiBGK9IteeYsmoA',
-  html_attributions: [],
+  html_attributions: []
 }
 
 const HAPPY_PATH_RESULT = {
@@ -52,7 +52,7 @@ const HAPPY_PATH_RESULT = {
   stateShort: 'IL',
   streetName: 'Maple Hill Road',
   streetNumber: '235',
-  zipCode: '60022',
+  zipCode: '60022'
 }
 
 const EMPTY_PATH_RESULT = {
@@ -65,7 +65,7 @@ const EMPTY_PATH_RESULT = {
   stateShort: '',
   streetName: '',
   streetNumber: '',
-  zipCode: '',
+  zipCode: ''
 }
 
 describe('Package Tests', () => {
