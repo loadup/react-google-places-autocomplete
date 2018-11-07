@@ -59,10 +59,12 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "parse-google-place": "^1.2.0"
-  },
+  "dependencies": {},
   "standard": {
-    "globals": ["describe", "expect", "it"]
+    "globals": [
+      "describe",
+      "expect",
+      "it"
+    ]
   }
 }

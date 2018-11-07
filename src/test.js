@@ -56,7 +56,7 @@ const HAPPY_PATH_RESULT = {
 }
 
 const EMPTY_PATH_RESULT = {
-  address: ' ', // Note address always gets parsed as an empty string
+  address: '', // Note address always gets parsed as an empty string
   city: '',
   countryLong: '',
   countryShort: '',
