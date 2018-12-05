@@ -6,22 +6,22 @@ class Autocomplete extends Component {
   componentDidMount () {
     const { fields, id, onPlaceChanged, types } = this.props
 
-    //this.autocomplete = new window['google'].maps.places.Autocomplete(
-    //  document.getElementById(id),
-    //  {
-    //    types,
-    //    componentRestrictions: {
-    //      country: 'us'
-    //    }
-    //  }
-    //)
-    //
-    //this.autocomplete.setFields(fields)
-    //
-    //this.autocomplete.addListener('place_changed', () => {
-    //  const place = this.autocomplete.getPlace()
-    //  onPlaceChanged({ original: place, parsed: parseGooglePlace(place) })
-    //})
+    this.autocomplete = new window['google'].maps.places.Autocomplete(
+      document.getElementById(id),
+      {
+        types,
+        componentRestrictions: {
+          country: 'us'
+        }
+      }
+    )
+
+    this.autocomplete.setFields(fields)
+
+    this.autocomplete.addListener('place_changed', () => {
+      const place = this.autocomplete.getPlace()
+      onPlaceChanged({ original: place, parsed: parseGooglePlace(place) })
+    })
   }
 
   render () {
