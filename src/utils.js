@@ -21,6 +21,14 @@ export const parseGooglePlace = (place = {}) => {
   }
 }
 
+export const intervalSetAutocomplete = (elem) => {
+  if (!window.chrome) return
+  elem.setAttribute('autocomplete', 'nope')
+  return setInterval(() => {
+    elem.setAttribute('autocomplete', 'nope')
+  }, 1500)
+}
+
 const placeAttrsByType = (addrComponents) => (
   (addrComponents || []).reduce(function (acc, data) {
     data.types.forEach(function (type) {

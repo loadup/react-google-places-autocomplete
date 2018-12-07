@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { parseGooglePlace } from './utils'
+import { intervalSetAutocomplete, parseGooglePlace } from './utils'
 
 class Autocomplete extends Component {
   componentDidMount () {
     const { fields, id, onPlaceChanged, types } = this.props
 
+    const elem = document.getElementById(id)
     this.autocomplete = new window['google'].maps.places.Autocomplete(
-      document.getElementById(id),
+      elem,
       {
         types,
         componentRestrictions: {
@@ -22,6 +23,16 @@ class Autocomplete extends Component {
       const place = this.autocomplete.getPlace()
       onPlaceChanged({ original: place, parsed: parseGooglePlace(place) })
     })
+
+    // Yeah, this sucks. There is no way to know when Google Autcomplete
+    // finishes loading. We also need to keep resetting the autocomplete
+    // value since they keep setting it to "off". We need it to be something
+    // else to actually turn autocomplete offa
+    this.autocompleteInterval = intervalSetAutocomplete(elem)
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.autocompleteInterval)
   }
 
   render () {
